@@ -1,0 +1,16 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:fontFamily">@font/calibri</item>
+        <item name="fontFamily">@font/calibri</item>
+<!--        <item name="android:textViewStyle">@style/CalibriTextViewStyle</item>-->
+    </style>
+
+    <style name="CalibriTextViewStyle" parent="android:Widget.TextView">
+        <item name="android:fontFamily">@font/calibri</item>
+    </style>
+
+</resources>

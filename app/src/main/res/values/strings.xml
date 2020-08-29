@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Food App</string>
+    <string name="order_food">Order Food</string>
+    <string name="order_details">Order Details</string>
+    <string name="tems_ordered">2 items ordered</string>
+    <string name="see_details">See details</string>
+    <string name="order_id">Order ID</string>
+    <string name="order_date">Order Date</string>
+    <string name="payment_mode">Payment Mode</string>
+    <string name="ordernumber">ORDERNUMBER123456789</string>
+    <string name="order_date_time">AUG 27, 2020 10:08 PM</string>
+    <string name="phonepe">PHONEPE</string>
+    <string name="location_details">2nd Floor, No 12, Road no 37, Back side of MGS Hospital, West Punjabi Bagh, Punjabi Bagh, Delhi, 110026, India</string>
+    <string name="instructions">Instructions: Call on arrival, bring cutlery</string>
+    <string name="location_name">OFFICE</string>
+    <string name="report_issue">Report Issue</string>
+    <string name="cooking">Cooking</string>
+    <string name="picked">Picked</string>
+    <string name="on_way">On way</string>
+    <string name="delivered">Delivered</string>
+    <string name="done">Done</string>
+</resources>

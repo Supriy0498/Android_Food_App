@@ -1,0 +1,555 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".OrderDetailsActivity">
+
+    <!--    <ScrollView-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="match_parent"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toTopOf="parent">-->
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:minHeight="?attr/actionBarSize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:theme="?attr/actionBarTheme"
+        app:contentInsetStart="0dp">
+
+        <ImageButton
+            android:id="@+id/btnOrderFood"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/ic_baseline_arrow_back_24" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/order_details"
+            android:textColor="@android:color/black"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="5dp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginBottom="10dp">
+
+            <ImageView
+                android:id="@+id/imageViewFood1"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_alignParentStart="true"
+                android:layout_marginEnd="10dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/food2" />
+
+            <ImageView
+                android:id="@+id/imageViewFood2"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginEnd="5dp"
+                android:layout_toEndOf="@id/imageViewFood1"
+                android:scaleType="fitXY"
+                android:src="@drawable/food1" />
+
+            <TextView
+                android:id="@+id/textViewItemCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp"
+                android:layout_toEndOf="@id/imageViewFood2"
+                android:text="@string/tems_ordered"
+                android:textColor="@color/material_on_background_emphasis_high_type"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textViewSeeDetails"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/textViewItemCount"
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginVertical="5dp"
+                android:layout_toEndOf="@id/imageViewFood2"
+                android:drawablePadding="10dp"
+                android:text="@string/see_details"
+                android:textColor="@color/material_on_background_emphasis_medium"
+                android:textSize="18sp"
+                app:drawableEndCompat="@drawable/ic_baseline_arrow_forward_ios_24" />
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginVertical="10dp"
+            android:background="#D3D3D3" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start|center_vertical"
+                android:text="@string/order_id"
+                android:textColor="@android:color/darker_gray"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textViewOrderID"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginHorizontal="10dp"
+                android:layout_weight="1"
+                android:gravity="end"
+                android:text="@string/ordernumber"
+                android:textColor="@color/material_on_background_emphasis_high_type"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginVertical="10dp"
+            android:background="#D3D3D3" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start|center_vertical"
+                android:text="@string/order_date"
+                android:textColor="@android:color/darker_gray"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textViewOrderDate"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginHorizontal="10dp"
+                android:layout_weight="1"
+                android:gravity="end"
+                android:text="@string/order_date_time"
+                android:textStyle="bold"
+                android:textColor="#DD1E1E1E"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginVertical="10dp"
+            android:background="#D3D3D3" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start|center_vertical"
+                android:text="@string/payment_mode"
+                android:textColor="@android:color/darker_gray"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textViewPaymentMode"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginHorizontal="10dp"
+                android:layout_weight="1"
+                android:gravity="end"
+                android:text="@string/phonepe"
+                android:textStyle="bold"
+                android:textColor="#DD1E1E1E"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginVertical="10dp"
+            android:background="#D3D3D3" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="10dp">
+
+            <ImageView
+                android:id="@+id/imageViewLocationPin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:src="@drawable/ic_baseline_location_on_24" />
+
+            <TextView
+                android:id="@+id/textViewLocationName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/imageViewLocationPin"
+                android:layout_marginBottom="10dp"
+                android:layout_toEndOf="@id/imageViewLocationPin"
+                android:text="@string/location_name"
+                android:textColor="#595959"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textViewLocationDetails"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/textViewLocationName"
+                android:layout_marginBottom="10dp"
+                android:layout_toEndOf="@id/imageViewLocationPin"
+                android:text="@string/location_details"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/textViewOrderInstructions"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/textViewLocationDetails"
+                android:layout_toEndOf="@id/imageViewLocationPin"
+                android:text="@string/instructions"
+                android:textSize="18sp" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="10dp"
+            android:background="#D3D3D3" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp">
+
+            <ImageView
+                android:id="@+id/imageViewOrderIconStatus1"
+                android:layout_width="@dimen/circle_icon"
+                android:layout_height="@dimen/circle_icon"
+                android:layout_marginStart="8dp"
+                android:background="@drawable/border_circle"
+                android:padding="5dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/progressBar1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_baseline_fastfood_24" />
+
+            <ProgressBar
+                android:id="@+id/progressBar1"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="0dp"
+                android:layout_height="2dp"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center_vertical"
+                android:backgroundTint="#D3D3D3"
+                android:progress="0"
+                android:progressTint="@color/colorAccent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/imageViewOrderIconStatus2"
+                app:layout_constraintStart_toEndOf="@+id/imageViewOrderIconStatus1"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="5dp"
+                android:text="@string/cooking"
+                android:textStyle="bold"
+                android:textColor="@android:color/black"
+                app:layout_constraintEnd_toEndOf="@+id/imageViewOrderIconStatus1"
+                app:layout_constraintStart_toStartOf="@+id/imageViewOrderIconStatus1"
+                app:layout_constraintTop_toBottomOf="@+id/imageViewOrderIconStatus1" />
+
+
+            <ImageView
+                android:id="@+id/imageViewOrderIconStatus2"
+                android:layout_width="@dimen/circle_dot"
+                android:layout_height="@dimen/circle_dot"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center_vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/progressBar2"
+                app:layout_constraintStart_toEndOf="@+id/progressBar1"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/circle_dots" />
+
+            <ProgressBar
+                android:id="@+id/progressBar2"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="0dp"
+                android:layout_height="2dp"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center_vertical"
+                android:backgroundTint="#D3D3D3"
+                android:progress="0"
+                android:progressTint="@color/colorAccent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/imageViewOrderIconStatus3"
+                app:layout_constraintStart_toEndOf="@+id/imageViewOrderIconStatus2"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="5dp"
+                android:text="@string/picked"
+                android:textStyle="bold"
+                android:textColor="@android:color/black"
+                app:layout_constraintBottom_toBottomOf="@+id/textView11"
+                app:layout_constraintEnd_toEndOf="@+id/imageViewOrderIconStatus2"
+                app:layout_constraintStart_toStartOf="@+id/imageViewOrderIconStatus2"
+                app:layout_constraintTop_toTopOf="@+id/textView11" />
+
+            <ImageView
+                android:id="@+id/imageViewOrderIconStatus3"
+                android:layout_width="@dimen/circle_dot"
+                android:layout_height="@dimen/circle_dot"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center_vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/progressBar3"
+                app:layout_constraintStart_toEndOf="@+id/progressBar2"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/circle_dots" />
+
+            <ProgressBar
+                android:id="@+id/progressBar3"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="0dp"
+                android:layout_height="2dp"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center_vertical"
+                android:backgroundTint="#D3D3D3"
+                android:progress="0"
+                android:progressTint="@color/colorAccent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/imageViewOrderIconStatus4"
+                app:layout_constraintStart_toEndOf="@+id/imageViewOrderIconStatus3"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView13"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="5dp"
+                android:text="@string/on_way"
+                android:textStyle="bold"
+                android:textColor="@android:color/black"
+                app:layout_constraintBottom_toBottomOf="@+id/textView12"
+                app:layout_constraintEnd_toEndOf="@+id/imageViewOrderIconStatus3"
+                app:layout_constraintStart_toStartOf="@+id/imageViewOrderIconStatus3"
+                app:layout_constraintTop_toTopOf="@+id/textView12" />
+
+            <ImageView
+                android:id="@+id/imageViewOrderIconStatus4"
+                android:layout_width="@dimen/circle_dot"
+                android:layout_height="@dimen/circle_dot"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center_vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/progressBar4"
+                app:layout_constraintStart_toEndOf="@+id/progressBar3"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/circle_dots" />
+
+            <ProgressBar
+                android:id="@+id/progressBar4"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="0dp"
+                android:layout_height="2dp"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center_vertical"
+                android:backgroundTint="#D3D3D3"
+                android:progress="0"
+                android:progressTint="@color/colorAccent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/imageViewOrderIconStatus5"
+                app:layout_constraintStart_toEndOf="@+id/imageViewOrderIconStatus4"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView14"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="5dp"
+                android:text="@string/delivered"
+                android:textStyle="bold"
+                android:textColor="@android:color/black"
+                app:layout_constraintBottom_toBottomOf="@+id/textView13"
+                app:layout_constraintEnd_toEndOf="@+id/imageViewOrderIconStatus4"
+                app:layout_constraintStart_toStartOf="@+id/imageViewOrderIconStatus4"
+                app:layout_constraintTop_toTopOf="@+id/textView13" />
+
+            <ImageView
+                android:id="@+id/imageViewOrderIconStatus5"
+                android:layout_width="@dimen/circle_dot"
+                android:layout_height="@dimen/circle_dot"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center_vertical"
+                android:layout_marginEnd="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/progressBar4"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/circle_dots" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="5dp"
+                android:layout_marginEnd="5dp"
+                android:text="@string/done"
+                android:textStyle="bold"
+                android:textColor="@android:color/black"
+                app:layout_constraintBottom_toBottomOf="@+id/textView14"
+                app:layout_constraintEnd_toEndOf="@+id/imageViewOrderIconStatus5"
+                app:layout_constraintStart_toStartOf="@+id/imageViewOrderIconStatus5"
+                app:layout_constraintTop_toTopOf="@+id/textView14" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/textViewProgress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="10dp"
+            android:text="Preparing Dinner"
+            android:textColor="#DD1E1E1E"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Expected arrival time: "
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textViewExpectedArrival"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="04:32 PM "
+                android:textStyle="bold"
+                android:textColor="#DD1E1E1E"
+                android:textSize="15sp" />
+
+        </LinearLayout>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnTrackOrder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="20dp"
+            android:backgroundTint="#EAE3EC"
+            android:drawableStart="@drawable/ic_baseline_location_on_24"
+            android:paddingHorizontal="40dp"
+            android:text="Track Order"
+            android:textColor="#8C8686"
+            android:textSize="18sp"
+            android:gravity="center"
+            android:textAllCaps="false"
+            android:drawablePadding="10dp"/>
+        <!--            app:icon="@drawable/ic_baseline_location_on_24"-->
+        <!--            app:iconGravity="start"-->
+        <!--            app:iconPadding="10dp"-->
+        <!--            app:iconSize="24dp"-->
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnReportIssue"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="10dp"
+            android:paddingHorizontal="30dp"
+            android:text="@string/report_issue"
+            android:textStyle="bold"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            android:gravity="center"
+            android:textAllCaps="false"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/curve_background" />
+
+
+    </LinearLayout>
+    <!--    </ScrollView>-->
+
+</androidx.constraintlayout.widget.ConstraintLayout>
