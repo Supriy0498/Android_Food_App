@@ -62,9 +62,8 @@ public class OrderDetailsActivity extends AppCompatActivity implements View.OnCl
         textViewProgress =findViewById(R.id.textViewProgress);
         btnTrackOrder.setOnClickListener(this);
         btnBack.setOnClickListener(this);
-
         btnReportIssue.setClickable(false);
-//toolbar.getRootView().findViewById(R.id.)
+
         progressBar1.setMax(100);
         progressBar2.setMax(100);
         progressBar3.setMax(100);
@@ -114,7 +113,7 @@ public class OrderDetailsActivity extends AppCompatActivity implements View.OnCl
     public void startGoogleMaps(){
 
         String locationQuery = textViewOrderLocation.getText().toString().trim();
-        Uri gmmIntentUri = Uri.parse("geo:0,0?q=" + Uri.encode(locationQuery));;//Uri.parse("geo:28.6738754,77.1349278");
+        Uri gmmIntentUri = Uri.parse("geo:0,0?q=" + Uri.encode(locationQuery));
         Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
         mapIntent.setPackage("com.google.android.apps.maps");
         startActivity(mapIntent);
@@ -138,8 +137,6 @@ public class OrderDetailsActivity extends AppCompatActivity implements View.OnCl
                 if (myAsyncTaskInstance.isCancelled()) {
                     myAsyncTaskInstance = new AsyncOrderProgressTask(iContext);
                 } else {
-                    //Toast.makeText(iContext, "A task is already running, try later", Toast.LENGTH_SHORT).show();
-
                     return null;
                 }
             }
